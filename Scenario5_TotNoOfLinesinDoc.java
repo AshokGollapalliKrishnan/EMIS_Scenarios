@@ -28,13 +28,10 @@ public class Scenario5_TotNoOfLinesinDoc {
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		WebElement newDoc = driver.findElement(By.id("mceu_33-text"));
 		newDoc.click();
-		WebElement bodyOfContent = driver.findElement(By.id("tinymce"));
-		//WebElement typeText = driver.findElement(By.xpath("html/body/p"));
-		bodyOfContent.submit();
-		bodyOfContent.sendKeys("Ashok");
+		WebElement bodyOfContent = driver.findElement(By.id("mce_0_ifr"));
+		driver.switchTo().frame(bodyOfContent);
+		textBox.sendKeys("Lorem ipsum dolor sit amet");
 		
-		
-	
 	}
 
 }
